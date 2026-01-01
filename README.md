@@ -1,10 +1,10 @@
 # delta-lake-utils
 
-Production-grade utilities for Delta Lake table management on Databricks.
+Production-grade utilities for Delta Lake table management and optimization on Databricks.
 
 ## What Does This Package Do?
 
-This package provides automated tools to manage and optimize Delta Lake tables. Think of it as a Swiss Army knife for Databricks data engineers.
+Automates Delta Lake table optimization, health monitoring, and pipeline generation for Databricks data engineers.
 
 ### Main Features:
 
@@ -33,8 +33,12 @@ This package provides automated tools to manage and optimize Delta Lake tables. 
    - Generates permission scripts
    - Ensures security compliance
 
-## Quick Start
+## Installation
+```bash
+pip install delta-lake-utils
+```
 
+## Quick Start
 ```python
 from pyspark.sql import SparkSession
 from delta_utils import DeltaOptimizer
@@ -47,33 +51,29 @@ result = optimizer.auto_optimize('/mnt/delta/my_table')
 print(f"Optimized! Removed {result.files_removed} files")
 ```
 
-## Installation
-
-```bash
-pip install delta-lake-utils
-```
-
 ## Use Cases
 
 ### Use Case 1: Your queries are slow
-Problem: Delta table has 5000 small files, queries take 10 minutes
+Problem: Delta table has 5000 small files, queries take 10 minutes  
 Solution: Run optimizer, consolidates to 50 files, queries now take 1 minute
 
 ### Use Case 2: Starting a new data pipeline
-Problem: Need to build Bronze/Silver/Gold architecture from scratch
+Problem: Need to build Bronze/Silver/Gold architecture from scratch  
 Solution: Use medallion generator, get complete pipeline in 30 seconds
 
 ### Use Case 3: Data quality issues
-Problem: Not sure if table is healthy, production keeps failing
+Problem: Not sure if table is healthy, production keeps failing  
 Solution: Run health checker, get specific recommendations to fix issues
 
 ### Use Case 4: Permission audit required
-Problem: Need to verify all tables have correct access controls
+Problem: Need to verify all tables have correct access controls  
 Solution: Use catalog auditor to check and fix permissions
 
-## Full Documentation
+## Documentation
 
-See examples/ folder for Jupyter notebooks with detailed usage.
+- See [QUICKSTART.md](QUICKSTART.md) for 5-minute tutorial
+- See [EXPLANATION.md](EXPLANATION.md) for detailed use cases
+- See [examples/EXAMPLES.md](examples/EXAMPLES.md) for code examples
 
 ## Requirements
 
@@ -84,4 +84,9 @@ See examples/ folder for Jupyter notebooks with detailed usage.
 
 ## Author
 
-Nalini Panwar
+Nalini Panwar 
+GitHub: [@panwarnalini-hub](https://github.com/panwarnalini-hub)
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details
