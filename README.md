@@ -84,4 +84,4 @@ See examples/ folder for Jupyter notebooks with detailed usage.
 
 ## Author
 
-Nalini Panwar - Lead Data Engineer
+Nalini Panwar
